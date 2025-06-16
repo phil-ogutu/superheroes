@@ -57,7 +57,7 @@ def update_power_description(id):
 def add_hero_power():
     data = request.get_json()
 
-    new_hero_power = HeroPower(strength=data["strength"], hero_id=["hero_id"], power_id=["power_id"])
+    new_hero_power = HeroPower(strength=data["strength"], hero_id=data["hero_id"], power_id=data["power_id"])
     db.session.add(new_hero_power)
     db.session.commit()
 
